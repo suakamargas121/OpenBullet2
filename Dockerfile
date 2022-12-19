@@ -12,5 +12,5 @@ WORKDIR /app
 RUN wget $(curl -s https://api.github.com/repos/openbullet/OpenBullet2/releases/latest | grep 'browser_' | cut -d\" -f4)
 RUN unzip OpenBullet2.zip
 RUN rm OpenBullet2.zip
-EXPOSE 5000
-CMD ["dotnet", "./OpenBullet2.dll", "--urls=http://*:5000"]
+EXPOSE 80
+CMD ["dotnet", "./OpenBullet2.dll", "--urls=http://*:80"]
